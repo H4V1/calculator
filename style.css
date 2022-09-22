@@ -1,0 +1,20 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 6em;
+}
+
+#numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 2rem);
+    justify-content: center;
+}
+
+.zero {
+    grid-column: 2/3;
+}
