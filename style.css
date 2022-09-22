@@ -9,6 +9,10 @@ html {
     width: 6em;
 }
 
+#result {
+    text-align: end;
+}
+
 #numpad {
     display: grid;
     grid-template-columns: repeat(3, 2rem);
