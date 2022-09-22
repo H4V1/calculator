@@ -21,10 +21,9 @@ function operate(operator, a, b) {
 }
 
 let numPressed = document.querySelectorAll('.number');
-
-console.log(numPressed);
+let displayValue = 0;
 
 numPressed.forEach(num => num.addEventListener('click', (e) => {
-    document.querySelector('#result').textContent = e.target.value
+    displayValue = Number(document.querySelector('#result').textContent = e.target.value);
 }))
 
