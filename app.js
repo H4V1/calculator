@@ -23,6 +23,14 @@ function operate(op, a, b) {
     return newFunction(a, b);
 };
 
+function resetValues() {
+    a = [];
+    b = [];
+    numArr = [];
+    result = 0;
+    operator = null;
+}
+
 const numPressed = document.querySelectorAll('.number');
 const operatorPressed = document.querySelectorAll('.operator');
 const display = document.querySelector('#display');
@@ -37,7 +45,7 @@ let numArr = [];
 
 numPressed.forEach(num => num.addEventListener('click', (e) => {
     let value = e.target.value;
-
+    display.textContent = value;
     if(operator !== null) {
         b.push(Number(value));
     } else {
@@ -58,15 +66,22 @@ equalKey.addEventListener('click', () => {
         a = Number(a.join(''));
     }
     
+    if(a > 0 && operator === 'divide') {
+        display.textContent = 'lol';
+        resetValues();
+        return 
+    }
+
+    if(typeof a === 'object' || typeof b === 'object' && operator === null) {
+        resetValues();
+        return
+    }
     b = Number(b.join(''));
     result = operate(operator, a, b);
     display.textContent = Math.round(result);
 });
 
 clearKey.addEventListener('click', () => {
-    a = [];
-    b = [];
-    numArr = [];
-    result = 0;
-    operator = null;
-})
+    display.textContent = 0;
+    resetValues();
+});
