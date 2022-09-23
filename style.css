@@ -15,8 +15,8 @@ button {
     
 }
 
-#result {
-    grid-column: 1/3;
+#display {
+    text-align: end;
 }
 
 #mid-section {
@@ -48,3 +48,4 @@ button {
 .equal, .clear {
     width: 50%;
 }
+
