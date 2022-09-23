@@ -35,11 +35,6 @@ let result = 0;
 let operator;
 let numArr = [];
 
-// document.querySelectorAll('.btn').forEach(element => element.addEventListener('click', (e) => {
-//     display.push(e.target.textContent);
-//     result.textContent = display.join('');
-// }));
-
 numPressed.forEach(num => num.addEventListener('click', (e) => {
     let value = e.target.value;
 
