@@ -29,38 +29,44 @@ const display = document.querySelector('#display');
 const equalKey = document.querySelector('.equal');
 const clearKey = document.querySelector('.clear');
 
-let a = 0;
-let b = 0
+let a = [];
+let b = [];
 let result = 0;
-let operator;
+let operator = null;
 let numArr = [];
 
 numPressed.forEach(num => num.addEventListener('click', (e) => {
     let value = e.target.value;
 
-    if(a > 0) {
-        b = Number(value);
-        display.textContent = b;
+    if(operator !== null) {
+        b.push(Number(value));
     } else {
-        a = Number(value);
-        display.textContent = a;
+        a.push(Number(value));
     }
 }));
 
 operatorPressed.forEach(op => op.addEventListener('click', (e) => {
     operator = e.target.value;
-    
+    if(result > 0) {
+        a = result;
+        b = [];
+    }
 }))
 
 equalKey.addEventListener('click', () => {
-    display.textContent = operate(operator, a, b);
+    if(typeof a === 'object'){
+        a = Number(a.join(''));
+    }
+    
+    b = Number(b.join(''));
+    result = operate(operator, a, b);
+    display.textContent = Math.round(result);
 });
 
 clearKey.addEventListener('click', () => {
-    a = 0
-    b = 0
+    a = [];
+    b = [];
     numArr = [];
-    display.textContent = 0;
+    result = 0;
+    operator = null;
 })
-
-
