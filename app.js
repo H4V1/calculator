@@ -46,9 +46,19 @@ let operator = null;
 
 buttons.forEach(num => num.addEventListener('click', (e)=> {
     let value = e.target.value;
-    
+
     if (display.textContent === '0' || display.textContent === '727 When you see it!') {
         display.textContent = value;
+    } else if (value === 'backspace' || value === 'backspace' && numB > 0) {
+        display.textContent = display.textContent.slice(0, -1);
+        numValue = display.textContent;
+        numValue = numValue.slice(0, -1);
+
+        if(operator !== null) {
+            numB = Number(numValue);
+        } 
+
+        return
     } else {
         display.textContent += e.target.textContent;   
     }
@@ -67,14 +77,17 @@ numbers.forEach(num => num.addEventListener('click', (e) => {
 }));
 
 operators.forEach(op => op.addEventListener('click', (e) => {
+    // if(e.target.value === 'backspace') {
+    //     return
+    // }
     if(numA > 0 && numB > 0) {
         result = operate(operator, numA, numB); 
         display.textContent = result + e.target.textContent;
         numA = result;
     } else if (numB === 0 && operator === 'divide') {
         display.textContent = '727 When you see it!';
-    }
-
+    } 
+    
     if(operator !== null) {
         numB = Number(numValue);
     } else {
@@ -94,7 +107,7 @@ equalKey.addEventListener('click', () => {
         resetValues();
     } else {
         result = operate(operator, numA, numB)
-        display.textContent = result;
+        display.textContent = result;   
         numA = result;
         numB = 0;
     }
