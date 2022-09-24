@@ -32,7 +32,8 @@ button {
 }
 
 #display {
-    width: 100%;
+    max-width: 235.17px;
+    min-width: 235.17px;
     text-align: end;
     font-size: 2.5em;
     color: white;
@@ -40,6 +41,7 @@ button {
     border: 1px solid #357DED;
     border-radius: 10px 10px 0 0;
     font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
 }
 
 #mid-section {
@@ -59,10 +61,6 @@ button {
 #numpad {
     display: grid;
     grid-template-columns: repeat(3, auto);
-}
-
-.zero {
-    grid-column: 2/3;
 }
 
 .float {
