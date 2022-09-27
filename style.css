@@ -29,11 +29,25 @@ button {
     padding: 1.6em;
     background-color: #357DED;
     border-radius: 20px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+#container p {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#container .footer {
+    font-size: .5em;
 }
 
 #display {
+    display: flex;
+    flex-direction: column;
     max-width: 235.17px;
     min-width: 235.17px;
+    min-height: 1.3em;
     text-align: end;
     font-size: 2.5em;
     color: white;
@@ -43,6 +57,7 @@ button {
     font-family: 'Rajdhani', sans-serif;
     overflow: hidden;
 }
+
 
 #mid-section {
     display: flex;
@@ -67,14 +82,14 @@ button {
     grid-column: 3/4;
 }
 
-#equal {
+.equal {
     grid-column: 1/2;
     grid-row: 4/6;
     background-color: #5438DC;
     color: white;
 }
 
-#clear {
+.clear {
     grid-column: 2/4;
     background-color: #B24C63;
     color: white;
@@ -89,10 +104,10 @@ button:hover {
     background-color: #86384a;
 }
 
-#clear:hover {
+.clear:hover {
     background-color: #86384a;
 }
 
-#equal:hover {
+.equal:hover {
     background-color: #3b289e;
 }
