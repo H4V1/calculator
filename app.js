@@ -78,8 +78,6 @@ buttons.forEach(element => element.addEventListener('click', (e) => {
         result = operate(operator, numA, numB);
         numA = result;                                                              //operators
         display.textContent = result;
-    } else if(numA > 0 && numB === 0 && value === 'divide') {
-        display.textContent === "Don't do that :(";
     } else if (operator !== null){
         return
     }
