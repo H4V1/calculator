@@ -20,7 +20,7 @@ function operate(op, a, b) {
     //this call a function from a string, in this case the value of a button
     let newFunction = window[op];
     if(typeof newFunction === 'function') newFunction(); //if the type of x = function then call the funcion x();
-    return newFunction(a, b).toFixed(2);
+    return newFunction(a, b);
 };
 
 function resetValues() {
@@ -78,6 +78,8 @@ buttons.forEach(element => element.addEventListener('click', (e) => {
         result = operate(operator, numA, numB);
         numA = result;                                                              //operators
         display.textContent = result;
+    } else if(numA > 0 && numB === 0 && value === 'divide') {
+        display.textContent === "Don't do that :(";
     } else if (operator !== null){
         return
     }
