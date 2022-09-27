@@ -32,10 +32,7 @@ function resetValues() {
 }
 
 const display = document.querySelector('#display');
-const displayTop = display.querySelector('.top');
-const displayBottom = display.querySelector('.bottom')
 const buttons = document.querySelectorAll('button');
-const numbers = document.querySelectorAll('.number');
 const operators = document.querySelectorAll('#operators');
 const equalKey = document.querySelector('.equal');
 const clearKey = document.querySelector('.clear');
@@ -99,6 +96,7 @@ equalKey.addEventListener('click', () => {
         return
     } else {
         result = operate(operator, numA, numB);
+        console.log(result);
         if(result === Infinity) {
             display.textContent = "Don't do that :(";
         } else {
